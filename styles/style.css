@@ -11,6 +11,12 @@
 */
 
 .page {
+  font-family: Inter, sans-serif;
+  font-weight: var(--wght-secondary-font, 400);
+  font-size: var(--font-size-s, 18px);
+  background-color: var(--background-color, #fff);
+  background-image: var(--background-gradient);
+  background-size: cover;
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }

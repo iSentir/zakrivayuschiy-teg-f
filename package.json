@@ -1,0 +1,31 @@
+{
+  "name": "zakrivayuschiy-teg-f",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/iSentir/zakrivayuschiy-teg-f#readme",
+  "bugs": {
+    "url": "https://github.com/iSentir/zakrivayuschiy-teg-f/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iSentir/zakrivayuschiy-teg-f.git"
+  },
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "prettier --check './src/**/*.{html,css,js}'",
+    "format": "prettier --write './src/**/*.{html,css,js}'",
+    "lint": "stylelint './src/**/*.css'",
+    "lintfix": "stylelint './src/**/*.css' --fix",
+    "checkAll": "npm run check && npm run lint",
+    "fixAll": "npm run format && npm run lintfix"
+  },
+  "devDependencies": {
+    "@stylistic/stylelint-plugin": "^5.3.1",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.9.10",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
