@@ -1,12 +1,24 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
+  --block-width: clamp(320px, 100dvi, 700px);
+  --block-padding: clamp(122px, 4vw + 106px, 128px);
+  --main-border: 2px solid #000;
+
+  /* end width  border padding */
+
   --main-font: 'Inter', sans-serif;
   --second-font: 'PressStart2P';
   --font-size-s: 18px;
+  --font-size-xl: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  --font-size-xxl: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
   --wght-primary-font: 785;
   --wght-secondary-font: 400;
-  --background-color-main: #fff;
+
+  /* end font */
+
+  --base-color: #000;
+  --bg-main-color: #fff;
   --background-gradient:
     repeating-linear-gradient(
       to right,
