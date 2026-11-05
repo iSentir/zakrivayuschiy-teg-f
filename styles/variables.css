@@ -19,6 +19,7 @@
 
   --base-color: #000;
   --bg-main-color: #fff;
+  --watermark-color: #fff;
   --background-gradient:
     repeating-linear-gradient(
       to right,
