@@ -17,6 +17,7 @@
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
+  font-weight: 400;
   font-variation-settings: 'wght' var(--wght-secondary-font);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -58,6 +59,7 @@
 
 .main {
   background-color: var(--bg-main-color);
+  padding-block-end: 100px;
 }
 
 .article {
@@ -102,6 +104,7 @@
     1px 1px 0 var(--watermark-color);
   inset-inline-end: 25px;
   inset-block-start: 25px;
+  mix-blend-mode: hard-light;
 }
 
 @supports (
@@ -124,4 +127,50 @@
 
 .image-wrapper {
   position: relative;
+}
+
+.article-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-block-end: 25px;
+  padding-inline-end: 27px;
+}
+
+.card__icon-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/*      button    */
+
+.button {
+  display: flex;
+  align-items: center;
+  min-block-size: 38px;
+  border: var(--main-border);
+  padding-inline: 36px;
+  padding-block: 11px;
+  font-family: var(--second-font), sans-serif;
+  font-size: 14px;
+  line-height: 90%;
+  letter-spacing: 0%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-save {
+  flex-direction: column;
+  min-block-size: 84px;
+  gap: 8px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  padding-block: 7px;
+}
+
+.floppy-save {
+  inline-size: 28px;
+  block-size: 28px;
 }
