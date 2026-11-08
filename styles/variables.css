@@ -2,7 +2,7 @@
 
 :root {
   --block-width: clamp(320px, 100dvi, 700px);
-  --block-padding: clamp(122px, 4vw + 106px, 128px);
+  --block-padding: clamp(120px, 4vw + 106px, 128px);
   --main-border: 2px solid #000;
 
   /* end width  border padding */

@@ -17,7 +17,6 @@
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
-  font-weight: 400;
   font-variation-settings: 'wght' var(--wght-secondary-font);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -58,12 +57,14 @@
 /*        MAIN                  */
 
 .main {
-  background-color: var(--bg-main-color);
   padding-block-end: 100px;
+  background-color: var(--bg-main-color, #fff);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .article {
-  margin-block-end: 50px;
   border: var(--main-border);
   inline-size: 100%;
 }
@@ -73,14 +74,24 @@
   padding-block: 4px;
   font-family: Inter, sans-serif;
   font-size: var(--font-size-s);
-  line-height: 120%;
+  line-height: 22px;
   letter-spacing: 0%;
   font-variation-settings: 'wght' var(--wght-primary-font);
 }
 
+/*     -------------------  */
+
+.subtitle-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-block: 25px;
+}
+
+/*   -----------------------  */
+
 .article-subtitle {
   padding-inline: 25px;
-  padding-block-end: 25px;
   font-family: Inter, sans-serif;
   font-size: var(--font-size-s);
   line-height: 21px;
@@ -119,10 +130,10 @@
 
 .image-item {
   display: block;
-  margin-block-end: 25px;
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
+  border-block-end: 2px solid #000;
 }
 
 .image-wrapper {
@@ -134,8 +145,8 @@
   justify-content: flex-end;
   align-items: center;
   gap: 8px;
-  margin-block-end: 25px;
   padding-inline-end: 27px;
+  padding-block-end: 25px;
 }
 
 .card__icon-button {
@@ -144,33 +155,132 @@
   cursor: pointer;
 }
 
+/*      icon      */
+
 /*      button    */
 
 .button {
   display: flex;
   align-items: center;
-  min-block-size: 38px;
   border: var(--main-border);
   padding-inline: 36px;
   padding-block: 11px;
+  cursor: pointer;
+  min-block-size: 38px;
+  background: transparent;
+}
+
+.button__text {
   font-family: var(--second-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
   letter-spacing: 0%;
-  background: transparent;
-  cursor: pointer;
 }
 
 .btn-save {
   flex-direction: column;
-  min-block-size: 84px;
   gap: 8px;
   margin-inline: auto;
   padding-inline: 20px;
-  padding-block: 7px;
+  padding-block: 18px;
+  min-block-size: 84px;
 }
 
 .floppy-save {
   inline-size: 28px;
   block-size: 28px;
 }
+
+/*   dialog   */
+
+.dialog {
+  display: none;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  padding-inline: 33px;
+  padding-block: 30px;
+  max-inline-size: 353px;
+}
+
+.dialog-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dialog-text {
+  font-family: var(--second-font), sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.button__text-ok {
+  padding-inline: 116.5px;
+}
+
+.dialog .floppy-save {
+  inline-size: 38px;
+  block-size: 39px;
+  flex-shrink: 0;
+}
+
+/*    filter  */
+
+.filter-brightness {
+  filter: brightness(2.5);
+}
+
+.filter-contrast {
+  filter: contrast(2.5);
+}
+
+.filter-blur {
+  filter: blur(4px);
+}
+
+.filter-opacity {
+  filter: opacity(0.2);
+}
+
+.filter-saturate {
+  filter: saturate(20%);
+}
+
+.filter-invert {
+  filter: invert(100%);
+}
+
+.filter-blur-sepia {
+  filter: sepia(100%) blur(2px);
+}
+
+.filter-grayscale {
+  filter: grayscale(1.5);
+}
+
+/*      media       */
+/* 
+@media (width < 375px) {
+  :root {
+    --font-size-xxl: 2.5rem;
+  }
+
+  .btn-save {
+    padding-inline: 12px;
+    padding-block: 12px;
+  }
+} */
