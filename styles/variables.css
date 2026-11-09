@@ -36,4 +36,8 @@
       transparent 4px
     ),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+  --contour-color: #000;
+  --icon-base-color: #000;
+  --core-color: #fff;
+  --animation-fill-color: #f00;
 }
