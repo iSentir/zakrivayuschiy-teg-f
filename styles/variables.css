@@ -4,6 +4,9 @@
   --block-width: clamp(320px, 100dvi, 700px);
   --block-padding: clamp(120px, 4vw + 106px, 128px);
   --main-border: 2px solid #000;
+  --btn-width: clamp(116.5px, 98.62px + 4.77vw, 131px);
+  --btn-padding-width: clamp(28px, 49.54px - 3.08vw, 38px);
+  --btn-padding-max-w-size: clamp(341px, 326px + 4.7vw, 354px);
 
   /* end width  border padding */
 
