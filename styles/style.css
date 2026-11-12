@@ -18,7 +18,7 @@
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: 'wght' var(--wght-secondary-font);
+  font-variation-settings: 'wght' var(--wght-secondary-font, 400);
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
@@ -34,20 +34,21 @@
   align-items: center;
   gap: 20px;
   margin-block: 100px;
-  border: var(--main-border);
-  padding-block: var(--block-padding);
+  border: var(--main-border, 2px solid #000);
+  padding-block: var(--block-padding, 120px);
+  background-color: var(--bg-main-color, #fff);
 }
 
 .header-subtitle {
   font-family: var(--second-font), fantasy;
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xxl, 49px);
   line-height: 100%;
   text-transform: uppercase;
 }
 
 .header-title {
   font-family: var(--second-font), fantasy;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-xl, 16px);
   line-height: 100%;
   text-transform: uppercase;
 }
@@ -59,21 +60,21 @@
   flex-direction: column;
   gap: 50px;
   padding-block-end: 100px;
-  background-color: var(--bg-main-color, #fff);
 }
 
 .article {
-  border: var(--main-border);
+  border: var(--main-border, 2px solid #000);
   inline-size: 100%;
+  background-color: var(--bg-main-color, #fff);
 }
 
 .article-title {
   padding-inline: 10px;
   padding-block: 6px 2px;
   font-family: Inter, sans-serif;
-  font-size: var(--font-size-s);
+  font-size: var(--font-size-s, 18px);
   line-height: 21px;
-  font-variation-settings: 'wght' var(--wght-primary-font);
+  font-variation-settings: 'wght' var(--wght-primary-font, 785);
 }
 
 /*     -------------------  */
@@ -90,10 +91,10 @@
 .article-subtitle {
   padding-inline: 25px;
   font-family: Inter, sans-serif;
-  font-size: var(--font-size-s);
+  font-size: var(--font-size-s, 18px);
   line-height: 21px;
   letter-spacing: 0.6%;
-  font-variation-settings: 'wght' var(--wght-secondary-font);
+  font-variation-settings: 'wght' var(--wght-secondary-font, 400);
 }
 
 .article-watermark {
@@ -105,10 +106,10 @@
   line-height: 100%;
   text-transform: uppercase;
   text-shadow:
-    -1px -1px 0 var(--watermark-color),
-    1px -1px 0 var(--watermark-color),
-    -1px 1px 0 var(--watermark-color),
-    1px 1px 0 var(--watermark-color);
+    -1px -1px 0 var(--watermark-color, #fff),
+    1px -1px 0 var(--watermark-color, #fff),
+    -1px 1px 0 var(--watermark-color, #fff),
+    1px 1px 0 var(--watermark-color, #fff);
   -webkit-text-stroke: 1px var(--watermark-color, #fff);
   inset-inline-end: 26px;
   inset-block-start: 30px;
@@ -116,12 +117,12 @@
 }
 
 @supports (
-  (text-stroke: 1px var(--watermark-color)) or
-    (-webkit-text-stroke: 1px var(--watermark-color))
+  (text-stroke: 1px var(--watermark-color, white)) or
+    (-webkit-text-stroke: 1px var(--watermark-colo, white))
 ) {
   .article-watermark {
-    -webkit-text-stroke: 1px var(--watermark-color);
-    text-stroke: 1px var(--watermark-color);
+    -webkit-text-stroke: 1px var(--watermark-color, #fff);
+    text-stroke: 1px var(--watermark-color, #fff);
     text-shadow: none;
   }
 }
@@ -169,7 +170,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  border: var(--main-border);
+  border: var(--main-border, 2px solid #000);
   padding-inline: 36px;
   padding-block: 11px;
   overflow: hidden;
@@ -192,6 +193,7 @@
   padding-inline: 20px;
   padding-block: 18px;
   min-block-size: 84px;
+  background-color: var(--bg-main-color, #fff);
 }
 
 .button__text,
@@ -220,9 +222,9 @@
   align-items: center;
   gap: 30px;
   padding: 0;
-  padding-inline: 28px;
+  max-inline-size: var(--dialog-inline-size, calc(100vw - 16px));
+  padding-inline: var(--dialog-padding-inline, 27px);
   padding-block: 28px;
-  max-inline-size: 354px;
 }
 
 .dialog::backdrop {
@@ -234,6 +236,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  inline-size: var(--dialog-content-inline-size, 260px);
 }
 
 .dialog-text {
@@ -244,14 +247,14 @@
 }
 
 .button__text-ok {
-  padding-inline: var(--btn-width);
+  padding-inline: var(--dialog-btn-padding-inline, 115px);
   text-transform: uppercase;
 }
 
 .dialog .floppy-save {
   flex-shrink: 0;
   inline-size: 38px;
-  block-size: 39px;
+  block-size: 38px;
 }
 
 /*    filter  */
@@ -323,7 +326,7 @@
 
 /*      media               */
 
-@media (width <= 375px) {
+@media (width < 375px) {
   :root {
     --font-size-xxl: 2.5rem;
   }
@@ -334,10 +337,8 @@
   }
 
   .dialog[open] {
-    padding-inline: 37px;
-    padding-block: 28px;
-    max-inline-size: 341px;
-    opacity: 0.5;
+    padding-inline: clamp(6px, calc(100vw - 348px), 27px);
+    padding-block: clamp(6px, calc(100vw - 347px), 28px);
   }
 }
 
