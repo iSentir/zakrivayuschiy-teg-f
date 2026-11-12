@@ -2,13 +2,21 @@
 
 :root {
   --block-width: clamp(320px, 100dvi, 700px);
-  --block-padding: clamp(120px, 4vw + 106px, 128px);
+  --block-padding: clamp(120px, calc(4vw + 106px), 128px);
   --main-border: 2px solid #000;
-  --btn-width: clamp(116.5px, 98.62px + 4.77vw, 131px);
-  --btn-padding-width: clamp(28px, 49.54px - 3.08vw, 38px);
-  --btn-padding-max-w-size: clamp(341px, 326px + 4.7vw, 354px);
+  --btn-width: clamp(115px, calc(98.62px + 4.77vw), 131px);
+  --btn-padding-width: clamp(28px, calc(49.54px - 3.08vw), 38px);
+  --btn-padding-max-w-size: clamp(341px, calc(326px + 4.7vw), 354px);
+  --dialog-inline-size: calc(100vw - 16px);
+  --dialog-padding-inline: clamp(27px, calc(50.692px - 3.385vw), 38px);
+  --dialog-content-inline-size: clamp(260px, calc(223.077px + 9.846vw), 292px);
+  --dialog-btn-padding-inline: clamp(
+    115.5px,
+    calc(95.885px + 5.231vw),
+    132.5px
+  );
 
-  /* end width  border padding */
+  /* end width  border padding size */
 
   --main-font: 'Inter', sans-serif;
   --second-font: 'PressStart2P';
